@@ -1,29 +1,75 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Logo écologique du Lycée Oued Ellil">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Logo écologique du Lycée Oued Ellil">
   <title>Lycée Oued Ellil – logo écologique</title>
   <defs>
-    <linearGradient id="fond" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#14532d"/>
-      <stop offset="1" stop-color="#16a34a"/>
+    <radialGradient id="nuit" cx="35%" cy="25%" r="90%">
+      <stop offset="0" stop-color="#14614a"/>
+      <stop offset=".55" stop-color="#0a3b30"/>
+      <stop offset="1" stop-color="#041f1c"/>
+    </radialGradient>
+    <linearGradient id="feuille" x1="150" y1="400" x2="372" y2="104" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#15803d"/>
+      <stop offset=".5" stop-color="#34d399"/>
+      <stop offset="1" stop-color="#d9f99d"/>
     </linearGradient>
-    <clipPath id="rond"><circle cx="100" cy="100" r="88"/></clipPath>
+    <linearGradient id="ombre" x1="372" y1="104" x2="240" y2="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#065f46" stop-opacity="0"/>
+      <stop offset="1" stop-color="#064e3b" stop-opacity=".55"/>
+    </linearGradient>
+    <linearGradient id="oued" x1="372" y1="104" x2="110" y2="480" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f0f9ff"/>
+      <stop offset=".6" stop-color="#7dd3fc"/>
+      <stop offset="1" stop-color="#0ea5e9"/>
+    </linearGradient>
+    <linearGradient id="eau" x1="0" y1="400" x2="0" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#0369a1"/>
+    </linearGradient>
+    <linearGradient id="lune" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fef3c7"/>
+      <stop offset="1" stop-color="#fbbf24"/>
+    </linearGradient>
+    <clipPath id="disque"><circle cx="256" cy="256" r="236"/></clipPath>
+    <mask id="croissant">
+      <rect width="512" height="512" fill="#000"/>
+      <circle cx="150" cy="150" r="50" fill="#fff"/>
+      <circle cx="172" cy="136" r="43" fill="#000"/>
+    </mask>
   </defs>
-  <circle cx="100" cy="100" r="96" fill="url(#fond)"/>
-  <circle cx="100" cy="100" r="88" fill="none" stroke="#bbf7d0" stroke-width="3"/>
-  <!-- tige et feuilles -->
-  <path d="M100 108 V74" stroke="#bbf7d0" stroke-width="5" stroke-linecap="round" fill="none"/>
-  <path d="M100 82 C70 82 54 58 58 36 C86 36 102 54 100 82 Z" fill="#86efac"/>
-  <path d="M100 96 C130 96 146 74 142 52 C114 52 98 70 100 96 Z" fill="#4ade80"/>
-  <path d="M100 82 C88 66 76 54 64 44" stroke="#14532d" stroke-width="2" fill="none" opacity=".35" stroke-linecap="round"/>
-  <path d="M100 96 C112 82 126 68 138 58" stroke="#14532d" stroke-width="2" fill="none" opacity=".35" stroke-linecap="round"/>
-  <!-- livre ouvert -->
-  <path d="M100 152 C82 141 60 139 38 146 L38 104 C60 97 82 99 100 110 Z" fill="#f0fdf4"/>
-  <path d="M100 152 C118 141 140 139 162 146 L162 104 C140 97 118 99 100 110 Z" fill="#dcfce7"/>
-  <path d="M100 110 V152" stroke="#16a34a" stroke-width="2.5"/>
-  <path d="M50 114 C64 111 78 113 90 119 M50 126 C64 123 78 125 90 131" stroke="#86efac" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-  <path d="M150 114 C136 111 122 113 110 119 M150 126 C136 123 122 125 110 131" stroke="#86efac" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-  <!-- oued : vagues -->
-  <g clip-path="url(#rond)">
-    <path d="M0 160 C25 148 50 172 80 160 C110 148 135 172 165 160 C180 154 192 156 200 158 V200 H0 Z" fill="#38bdf8"/>
-    <path d="M0 172 C25 162 50 184 80 172 C110 162 135 184 165 172 C180 167 192 168 200 170 V200 H0 Z" fill="#0ea5e9"/>
+
+  <!-- médaillon -->
+  <circle cx="256" cy="256" r="252" fill="#041f1c"/>
+  <circle cx="256" cy="256" r="236" fill="url(#nuit)"/>
+  <circle cx="256" cy="256" r="244" fill="none" stroke="#a7f3d0" stroke-width="3" opacity=".9"/>
+
+  <g clip-path="url(#disque)">
+    <!-- étoiles -->
+    <g fill="#fef9c3">
+      <circle cx="232" cy="92" r="4"/>
+      <circle cx="92" cy="246" r="3.2" opacity=".8"/>
+      <circle cx="418" cy="214" r="3.6" opacity=".85"/>
+      <circle cx="396" cy="330" r="2.6" opacity=".6"/>
+      <circle cx="286" cy="58" r="2.4" opacity=".6"/>
+      <path d="M430 128 l4 11 11 4 -11 4 -4 11 -4 -11 -11 -4 11 -4z"/>
+    </g>
+    <!-- croissant de lune : « الليل », la nuit -->
+    <rect width="512" height="512" fill="url(#lune)" mask="url(#croissant)"/>
+
+    <!-- plan d'eau -->
+    <path d="M0 432 C60 410 110 452 176 432 C236 414 290 452 350 434 C410 416 460 440 512 426 V512 H0 Z" fill="url(#eau)"/>
+    <path d="M0 462 C70 444 120 478 190 462 C250 448 300 478 362 462 C420 448 470 466 512 456 V512 H0 Z" fill="#075985" opacity=".55"/>
+
+    <!-- feuille -->
+    <path d="M150 400 C106 250 226 116 372 104 C400 252 300 402 150 400 Z" fill="url(#feuille)"/>
+    <path d="M372 104 C400 252 300 402 150 400 C214 352 236 300 268 258 C304 212 340 168 372 104 Z" fill="url(#ombre)"/>
+    <!-- nervures -->
+    <g fill="none" stroke="#ecfdf5" stroke-width="5" stroke-linecap="round" opacity=".5">
+      <path d="M232 322 C204 300 184 270 176 236"/>
+      <path d="M270 262 C248 238 236 208 236 176"/>
+      <path d="M312 208 C298 188 294 164 300 140"/>
+      <path d="M246 306 C280 312 312 304 338 286"/>
+      <path d="M286 248 C316 252 344 242 364 224"/>
+    </g>
+    <!-- l'oued : nervure centrale qui devient rivière -->
+    <path d="M372 104 C344 164 318 204 286 238 C252 276 240 308 222 352 C204 396 168 436 104 470 L176 478 C216 444 240 408 254 366 C268 322 276 292 304 256 C334 216 354 170 372 104 Z" fill="url(#oued)"/>
   </g>
 </svg>

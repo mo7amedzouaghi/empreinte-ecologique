@@ -93,7 +93,7 @@ a { color: var(--primary); }
 .lead { font-size: 1.15rem; max-width: 56ch; opacity: .95; }
 .hero .btn { background: #fff; color: #14532d; }
 .hero-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 32px; align-items: center; }
-.hero-art svg { width: min(280px, 100%); display: block; margin-inline: auto; animation: float 5s ease-in-out infinite; }
+.hero-art img { height: auto; filter: drop-shadow(0 12px 28px rgba(0,0,0,.35)); width: min(280px, 100%); display: block; margin-inline: auto; animation: float 5s ease-in-out infinite; }
 @keyframes float { 50% { transform: translateY(-10px); } }
 
 /* Cartes et sections */
