@@ -52,7 +52,9 @@ a { color: var(--primary); }
   padding: 10px 0;
 }
 .brand { display: flex; align-items: center; gap: 10px; margin-inline-end: auto; }
-.brand-icon { font-size: 1.8rem; }
+.brand-logo { width: 48px; height: 48px; display: block; }
+.footer-logo { width: 72px; height: 72px; display: block; margin: 0 auto 8px; }
+.school { font-weight: 700; font-size: 1.05rem; margin: 0 0 6px; }
 .brand small { display: block; color: var(--muted); font-size: .78rem; }
 .nav { display: flex; gap: 4px; flex-wrap: wrap; }
 .nav a {
