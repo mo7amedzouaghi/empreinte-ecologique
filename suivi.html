@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Projet البصمة البيئية : mesurer et réduire l'empreinte écologique du Lycée Oued Ellil">
+  <meta name="author" content="Lycée Oued Ellil">
+  <title>Suivi du lycée – البصمة البيئية</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script type="text/javascript" src="js/script.js"></script>
+</head>
+<body onload="init()">
+  <header class="entete">
+    <h1 class="titre">البصمة البيئية · Empreinte écologique · Ecological Footprint</h1>
+    <p class="sous-titre">Lycée Oued Ellil – Projet citoyen : mesurer, comprendre, réduire</p>
+  </header>
+  <nav class="menu">
+    <a class="lien" href="index.html">Accueil</a>
+    <a class="lien" href="calculateur.html">Calculateur</a>
+    <a class="lien" href="suivi.html">Suivi du lycée</a>
+    <a class="lien" href="sensibilisation.html">Sensibilisation</a>
+  </nav>
+  <main class="contenu">
+    <section class="bloc">
+      <h2 class="sous">Suivi des consommations du lycée</h2>
+      <p>Relevez chaque mois les factures et compteurs avec l'administration, saisissez les valeurs et cliquez sur « Calculer le bilan ». Laissez vide un mois non encore relevé.</p>
+      <p class="note">Les données ne sont pas enregistrées : notez le bilan ou faites une capture d'écran avant de fermer la page.</p>
+      <form action="suivi.html" method="get">
+        <table class="tab">
+          <caption class="legende">Consommations mensuelles et empreinte (kg CO2e)</caption>
+          <thead>
+            <tr>
+              <th class="entete-tab">Mois</th>
+              <th class="entete-tab">Électricité (kWh)</th>
+              <th class="entete-tab">Eau (m3)</th>
+              <th class="entete-tab">Papier (ramettes de 500 feuilles)</th>
+              <th class="entete-tab">Empreinte</th>
+              <th class="entete-tab">Comparaison</th>
+            </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td class="cellule-g">Septembre</td>
+            <td class="cellule"><input class="petit" type="number" id="e1" name="e1" min="0" step="1"></td>
+            <td class="cellule"><input class="petit" type="number" id="w1" name="w1" min="0" step="0.5"></td>
+            <td class="cellule"><input class="petit" type="number" id="p1" name="p1" min="0" step="1"></td>
+            <td class="cellule" id="r1">—</td>
+            <td class="cellule"><div class="barre-fond"><div class="barre" id="g1"></div></div></td>
+          </tr>
+          <tr>
+            <td class="cellule-g">Octobre</td>
+            <td class="cellule"><input class="petit" type="number" id="e2" name="e2" min="0" step="1"></td>
+            <td class="cellule"><input class="petit" type="number" id="w2" name="w2" min="0" step="0.5"></td>
+            <td class="cellule"><input class="petit" type="number" id="p2" name="p2" min="0" step="1"></td>
+            <td class="cellule" id="r2">—</td>
+            <td class="cellule"><div class="barre-fond"><div class="barre" id="g2"></div></div></td>
+          </tr>
+          <tr>
+            <td class="cellule-g">Novembre</td>
+            <td class="cellule"><input class="petit" type="number" id="e3" name="e3" min="0" step="1"></td>
+            <td class="cellule"><input class="petit" type="number" id="w3" name="w3" min="0" step="0.5"></td>
+            <td class="cellule"><input class="petit" type="number" id="p3" name="p3" min="0" step="1"></td>
+            <td class="cellule" id="r3">—</td>
+            <td class="cellule"><div class="barre-fond"><div class="barre" id="g3"></div></div></td>
+          </tr>
+          <tr>
+            <td class="cellule-g">Décembre</td>
+            <td class="cellule"><input class="petit" type="number" id="e4" name="e4" min="0" step="1"></td>
+            <td class="cellule"><input class="petit" type="number" id="w4" name="w4" min="0" step="0.5"></td>
+            <td class="cellule"><input class="petit" type="number" id="p4" name="p4" min="0" step="1"></td>
+            <td class="cellule" id="r4">—</td>
+            <td class="cellule"><div class="barre-fond"><div class="barre" id="g4"></div></div></td>
+          </tr>
+          <tr>
+            <td class="cellule-g">Janvier</td>
+            <td class="cellule"><input class="petit" type="number" id="e5" name="e5" min="0" step="1"></td>
+            <td class="cellule"><input class="petit" type="number" id="w5" name="w5" min="0" step="0.5"></td>
+            <td class="cellule"><input class="petit" type="number" id="p5" name="p5" min="0" step="1"></td>
+            <td class="cellule" id="r5">—</td>
+            <td class="cellule"><div class="barre-fond"><div class="barre" id="g5"></div></div></td>
+          </tr>
+          <tr>
+            <td class="cellule-g">Février</td>
+            <td class="cellule"><input class="petit" type="number" id="e6" name="e6" min="0" step="1"></td>
+            <td class="cellule"><input class="petit" type="number" id="w6" name="w6" min="0" step="0.5"></td>
+            <td class="cellule"><input class="petit" type="number" id="p6" name="p6" min="0" step="1"></td>
+            <td class="cellule" id="r6">—</td>
+            <td class="cellule"><div class="barre-fond"><div class="barre" id="g6"></div></div></td>
+          </tr>
+          <tr>
+            <td class="cellule-g">Mars</td>
+            <td class="cellule"><input class="petit" type="number" id="e7" name="e7" min="0" step="1"></td>
+            <td class="cellule"><input class="petit" type="number" id="w7" name="w7" min="0" step="0.5"></td>
+            <td class="cellule"><input class="petit" type="number" id="p7" name="p7" min="0" step="1"></td>
+            <td class="cellule" id="r7">—</td>
+            <td class="cellule"><div class="barre-fond"><div class="barre" id="g7"></div></div></td>
+          </tr>
+          <tr>
+            <td class="cellule-g">Avril</td>
+            <td class="cellule"><input class="petit" type="number" id="e8" name="e8" min="0" step="1"></td>
+            <td class="cellule"><input class="petit" type="number" id="w8" name="w8" min="0" step="0.5"></td>
+            <td class="cellule"><input class="petit" type="number" id="p8" name="p8" min="0" step="1"></td>
+            <td class="cellule" id="r8">—</td>
+            <td class="cellule"><div class="barre-fond"><div class="barre" id="g8"></div></div></td>
+          </tr>
+          <tr>
+            <td class="cellule-g">Mai</td>
+            <td class="cellule"><input class="petit" type="number" id="e9" name="e9" min="0" step="1"></td>
+            <td class="cellule"><input class="petit" type="number" id="w9" name="w9" min="0" step="0.5"></td>
+            <td class="cellule"><input class="petit" type="number" id="p9" name="p9" min="0" step="1"></td>
+            <td class="cellule" id="r9">—</td>
+            <td class="cellule"><div class="barre-fond"><div class="barre" id="g9"></div></div></td>
+          </tr>
+          </tbody>
+        </table>
+        <input class="bouton" type="button" value="Calculer le bilan" onclick="calculerSuivi()">
+        <input class="bouton" type="reset" value="Effacer">
+      </form>
+      <div class="resultat" id="bilan">Le bilan s'affichera ici.</div>
+      <p class="note">Facteurs : 0,47 kg CO2e/kWh, 0,3 kg CO2e/m3, 0,005 kg CO2e/feuille (voir la page Calculateur).</p>
+    </section>
+  </main>
+  <footer class="pied">
+    <p>Projet البصمة البيئية – Lycée Oued Ellil – <span id="annee"></span></p>
+    <p>Responsable du projet : Mme Sonia Aouichi (professeure d'anglais)</p>
+  </footer>
+</body>
+</html>

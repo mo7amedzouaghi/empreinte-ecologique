@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Projet البصمة البيئية : mesurer et réduire l'empreinte écologique du Lycée Oued Ellil">
+  <meta name="author" content="Lycée Oued Ellil">
+  <title>Calculateur – البصمة البيئية</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script type="text/javascript" src="js/script.js"></script>
+</head>
+<body onload="init()">
+  <header class="entete">
+    <h1 class="titre">البصمة البيئية · Empreinte écologique · Ecological Footprint</h1>
+    <p class="sous-titre">Lycée Oued Ellil – Projet citoyen : mesurer, comprendre, réduire</p>
+  </header>
+  <nav class="menu">
+    <a class="lien" href="index.html">Accueil</a>
+    <a class="lien" href="calculateur.html">Calculateur</a>
+    <a class="lien" href="suivi.html">Suivi du lycée</a>
+    <a class="lien" href="sensibilisation.html">Sensibilisation</a>
+  </nav>
+  <main class="contenu">
+    <section class="bloc">
+      <h2 class="sous">Calculateur d'empreinte personnelle</h2>
+      <p>Remplissez le formulaire puis cliquez sur « Calculer ». Résultat en <strong>kg CO2e par an</strong> (équivalent CO2).</p>
+      <form action="calculateur.html" method="get">
+        <fieldset class="groupe">
+          <legend class="leg">1. Transport domicile-lycée</legend>
+          <label class="etiq" for="mode">Mode de transport</label>
+          <select class="champ" id="mode" name="mode">
+            <option value="0">-- Choisir --</option>
+            <option value="0.218">Voiture essence</option>
+            <option value="0.113">Moto / scooter (≤ 125 cm3)</option>
+            <option value="0.146">Bus ou louage</option>
+            <option value="0">Vélo ou à pied</option>
+          </select>
+          <label class="etiq" for="distance">Distance domicile-lycée (km, aller simple)</label>
+          <input class="champ" type="number" id="distance" name="distance" value="0" min="0" step="0.5">
+          <label class="etiq" for="jours">Jours de cours par semaine : <output class="val" id="jours_aff" name="jours_aff">5</output></label>
+          <input type="range" id="jours" name="jours" min="1" max="6" value="5" step="1" oninput="afficherJours()">
+        </fieldset>
+        <fieldset class="groupe">
+          <legend class="leg">2. Maison : énergie, eau, papier</legend>
+          <label class="etiq" for="elec">Électricité (kWh par mois, voir la facture STEG)</label>
+          <input class="champ" type="number" id="elec" name="elec" value="0" min="0" step="1">
+          <label class="etiq" for="eau">Eau (m3 par mois, voir la facture SONEDE)</label>
+          <input class="champ" type="number" id="eau" name="eau" value="0" min="0" step="0.5">
+          <label class="etiq" for="papier">Papier utilisé pour le lycée (feuilles par semaine)</label>
+          <input class="champ" type="number" id="papier" name="papier" value="0" min="0" step="1">
+        </fieldset>
+        <fieldset class="groupe">
+          <legend class="leg">3. Déchets</legend>
+          <label class="etiq" for="dechets">Déchets de la maison (kg par semaine)</label>
+          <input class="champ" type="number" id="dechets" name="dechets" value="0" min="0" step="0.5">
+          <p>Triez-vous vos déchets (papier, plastique, verre) ?</p>
+          <label class="choix" for="tri_oui"><input type="radio" id="tri_oui" name="tri" value="oui"> Oui</label>
+          <label class="choix" for="tri_non"><input type="radio" id="tri_non" name="tri" value="non" checked> Non</label>
+        </fieldset>
+        <fieldset class="groupe">
+          <legend class="leg">4. Alimentation</legend>
+          <p>À quelle fréquence mangez-vous de la viande ?</p>
+          <label class="choix" for="viande_jour"><input type="radio" id="viande_jour" name="viande" value="jour"> Tous les jours</label>
+          <label class="choix" for="viande_semaine"><input type="radio" id="viande_semaine" name="viande" value="semaine" checked> Quelques fois par semaine</label>
+          <label class="choix" for="viande_rare"><input type="radio" id="viande_rare" name="viande" value="rare"> Rarement</label>
+        </fieldset>
+        <input class="bouton" type="button" value="Calculer" onclick="calculer()">
+        <input class="bouton" type="reset" value="Effacer">
+      </form>
+      <div class="resultat" id="resultat">Le résultat s'affichera ici.</div>
+    </section>
+    <section class="bloc">
+      <h2 class="sous">Facteurs d'émission utilisés</h2>
+      <table class="tab">
+        <caption class="legende">Valeurs de calcul (kg CO2e)</caption>
+        <thead>
+          <tr><th class="entete-tab">Poste</th><th class="entete-tab">Facteur</th><th class="entete-tab">Source / remarque</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="cellule-g">Électricité</td><td class="cellule">0,47 par kWh</td><td class="cellule-g">Réseau tunisien, 0,468 kgCO2e/kWh (moyenne IEA, citée dans le rapport EPIC Deploy Tunisie)</td></tr>
+          <tr><td class="cellule-g">Voiture essence</td><td class="cellule">0,218 par km</td><td class="cellule-g">ADEME, Base Empreinte</td></tr>
+          <tr><td class="cellule-g">Moto ≤ 125 cm3</td><td class="cellule">0,113 par km</td><td class="cellule-g">ADEME (deux-roues légers)</td></tr>
+          <tr><td class="cellule-g">Bus / louage</td><td class="cellule">0,146 par km</td><td class="cellule-g">ADEME, bus urbain, par passager</td></tr>
+          <tr><td class="cellule-g">Eau</td><td class="cellule">0,3 par m3</td><td class="cellule-g">Valeur indicative, à valider avec l'enseignant scientifique</td></tr>
+          <tr><td class="cellule-g">Papier</td><td class="cellule">0,005 par feuille A4</td><td class="cellule-g">Valeur indicative, à valider</td></tr>
+          <tr><td class="cellule-g">Déchets</td><td class="cellule">0,5 par kg (0,3 avec tri)</td><td class="cellule-g">Valeur pédagogique, à valider</td></tr>
+          <tr><td class="cellule-g">Alimentation</td><td class="cellule">1500 / 1000 / 600 par an</td><td class="cellule-g">Forfaits pédagogiques selon la fréquence de viande</td></tr>
+        </tbody>
+      </table>
+      <p class="note">Ce calculateur donne des ordres de grandeur pédagogiques, pas une mesure officielle. Hypothèse : 30 semaines de cours par an.</p>
+    </section>
+  </main>
+  <footer class="pied">
+    <p>Projet البصمة البيئية – Lycée Oued Ellil – <span id="annee"></span></p>
+    <p>Responsable du projet : Mme Sonia Aouichi (professeure d'anglais)</p>
+  </footer>
+</body>
+</html>

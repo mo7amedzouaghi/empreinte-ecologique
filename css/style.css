@@ -1,0 +1,243 @@
+body {
+  font-family: Arial, Tahoma, sans-serif;
+  font-size: 17px;
+  color: #1b2e1f;
+  background-color: #f1f8f2;
+  margin: 0;
+}
+header.entete {
+  background-color: #1b5e20;
+  color: white;
+  text-align: center;
+  padding: 22px;
+}
+h1.titre {
+  font-size: 32px;
+  margin: 0;
+}
+p.sous-titre {
+  font-size: 18px;
+  margin: 8px;
+}
+nav.menu {
+  background-color: #2e7d32;
+  text-align: center;
+  padding: 8px;
+}
+a.lien {
+  display: inline-block;
+  color: white;
+  background-color: #388e3c;
+  padding: 10px 18px;
+  margin: 4px;
+  border-radius: 20px;
+  transition: background-color 0.3s;
+}
+a.lien:hover {
+  background-color: #a5d6a7;
+  color: #1b2e1f;
+}
+main.contenu {
+  width: 90%;
+  margin: 20px auto;
+  overflow: hidden;
+}
+section.bloc {
+  background-color: white;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px #b0bec5;
+  overflow: hidden;
+}
+h2.sous {
+  color: #1b5e20;
+  font-size: 25px;
+  margin: 0 0 10px 0;
+}
+h3.sous3 {
+  color: #2e7d32;
+  font-size: 20px;
+}
+article.carte {
+  float: left;
+  width: 28%;
+  padding: 1%;
+  margin: 1%;
+  background-color: #e8f5e9;
+  border: 2px solid #a5d6a7;
+  border-radius: 12px;
+  transition: transform 0.3s;
+}
+article.carte:hover {
+  transform: scale(1.04);
+}
+div.fin {
+  clear: both;
+}
+p.note {
+  font-style: italic;
+  color: #546e7a;
+}
+span.arabe {
+  color: #1b5e20;
+  font-weight: bold;
+}
+fieldset.groupe {
+  border: 2px solid #a5d6a7;
+  border-radius: 10px;
+  margin: 15px 0;
+  padding: 12px;
+}
+legend.leg {
+  color: #1b5e20;
+  font-weight: bold;
+  font-size: 19px;
+}
+label.etiq {
+  display: block;
+  font-weight: bold;
+  margin: 12px 0 4px 0;
+}
+label.choix {
+  margin-right: 20px;
+}
+input.champ {
+  width: 40%;
+  padding: 8px;
+  border: 2px solid #81c784;
+  border-radius: 6px;
+  font-size: 16px;
+}
+select.champ {
+  width: 44%;
+  padding: 8px;
+  border: 2px solid #81c784;
+  border-radius: 6px;
+  font-size: 16px;
+}
+input.champ:focus {
+  background-color: #fffde7;
+  border-color: #f9a825;
+}
+select.champ:focus {
+  background-color: #fffde7;
+  border-color: #f9a825;
+}
+input.petit {
+  width: 80%;
+  padding: 6px;
+  border: 2px solid #81c784;
+  border-radius: 6px;
+  font-size: 15px;
+}
+input.petit:focus {
+  background-color: #fffde7;
+  border-color: #f9a825;
+}
+input.bouton {
+  background-color: #2e7d32;
+  color: white;
+  padding: 12px 28px;
+  margin: 10px 8px 10px 0;
+  border: none;
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+input.bouton:hover {
+  background-color: #f9a825;
+  color: #1b2e1f;
+}
+output.val {
+  font-weight: bold;
+  color: #1b5e20;
+}
+div.resultat {
+  background-color: #e8f5e9;
+  border: 2px solid #43a047;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 15px 0;
+}
+p.ligne-bar {
+  margin: 12px 0 4px 0;
+}
+div.barre-fond {
+  width: 100%;
+  height: 20px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+div.barre {
+  width: 0%;
+  height: 20px;
+  background-color: #43a047;
+  transition: width 0.8s;
+}
+span.faible {
+  color: #2e7d32;
+  font-weight: bold;
+}
+span.moyen {
+  color: #ef6c00;
+  font-weight: bold;
+}
+span.eleve {
+  color: #c62828;
+  font-weight: bold;
+}
+table.tab {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0;
+}
+caption.legende {
+  font-weight: bold;
+  font-size: 18px;
+  padding: 8px;
+  color: #1b5e20;
+}
+th.entete-tab {
+  background-color: #2e7d32;
+  color: white;
+  padding: 8px;
+  border: 1px solid #1b5e20;
+}
+td.cellule {
+  padding: 8px;
+  border: 1px solid #a5d6a7;
+  text-align: center;
+}
+td.cellule-g {
+  padding: 8px;
+  border: 1px solid #a5d6a7;
+  text-align: left;
+}
+details.eco {
+  background-color: #f1f8e9;
+  border: 1px solid #c5e1a5;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 8px 0;
+}
+summary.titre-eco {
+  font-weight: bold;
+  color: #1b5e20;
+}
+div.question {
+  background-color: #f9fbe7;
+  border: 1px solid #dce775;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 12px 0;
+}
+footer.pied {
+  background-color: #1b5e20;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin: 30px 0 0 0;
+}
