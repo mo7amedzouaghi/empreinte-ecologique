@@ -1,3 +1,5 @@
+<p align="center"><img src="img/logo.png" alt="Logo du Lycée Oued Ellil" width="200"></p>
+
 # البصمة البيئية – Empreinte écologique · Ecological footprint
 
 Application web du projet « البصمة البيئية » du Lycée Oued Ellil.
@@ -18,3 +20,6 @@ Site statique (HTML, CSS, JavaScript), sans dépendance ni serveur : il suffit d
 ## Facteurs d'émission (kg CO2e)
 Électricité 0,47/kWh (réseau tunisien, IEA) · voiture 0,218/km · moto 0,113/km · bus 0,146/km (ADEME).
 Eau, papier, déchets, alimentation : valeurs pédagogiques indicatives, à valider avec l'enseignant scientifique.
+
+## Documents
+- [Cahier des charges du projet](docs/cahier-des-charges.md)
