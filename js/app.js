@@ -114,11 +114,12 @@
 
   function buildTrackTable() {
     const names = T("months");
+    const labels = [T("th.elec"), T("th.water"), T("th.paper")];
     $("trackBody").innerHTML = track.map((r, i) =>
       "<tr><td>" + names[i] + "</td>" +
-      [0, 1, 2].map((c) => '<td><input type="number" min="0" step="any" inputmode="decimal" data-r="' + i + '" data-c="' + c +
+      [0, 1, 2].map((c) => '<td data-label="' + labels[c] + '"><input type="number" min="0" step="any" inputmode="decimal" data-r="' + i + '" data-c="' + c +
         '" value="' + r[c] + '" aria-label="' + names[i] + '"></td>').join("") +
-      '<td id="co2_' + i + '">—</td></tr>').join("");
+      '<td data-label="' + T("th.co2") + '" id="co2_' + i + '">—</td></tr>').join("");
   }
 
   function renderTrack() {
