@@ -1,62 +1,240 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" dir="ltr">
 <head>
   <meta charset="UTF-8">
-  <meta name="description" content="Projet البصمة البيئية : mesurer et réduire l'empreinte écologique du Lycée Oued Ellil">
-  <meta name="author" content="Lycée Oued Ellil">
-  <title>Accueil – البصمة البيئية</title>
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <script type="text/javascript" src="js/script.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="البصمة البيئية – Empreinte écologique – Ecological footprint : projet du Lycée Oued Ellil">
+  <meta name="theme-color" content="#14532d">
+  <title>البصمة البيئية · Empreinte écologique</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body onload="init()">
-  <header class="entete">
-    <h1 class="titre">البصمة البيئية · Empreinte écologique · Ecological Footprint</h1>
-    <p class="sous-titre">Lycée Oued Ellil – Projet citoyen : mesurer, comprendre, réduire</p>
+<body>
+  <a class="skip" href="#main" data-i18n="nav.home">Accueil</a>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <span class="brand-icon" aria-hidden="true">🌿</span>
+        <div>
+          <strong data-i18n="app.title">Empreinte écologique</strong>
+          <small data-i18n="app.sub"></small>
+        </div>
+      </div>
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="#accueil" data-i18n="nav.home"></a>
+        <a href="#calculateur" data-i18n="nav.calc"></a>
+        <a href="#suivi" data-i18n="nav.track"></a>
+        <a href="#defis" data-i18n="nav.chall"></a>
+        <a href="#quiz" data-i18n="nav.quiz"></a>
+        <a href="#glossaire" data-i18n="nav.gloss"></a>
+      </nav>
+      <div class="tools">
+        <div class="langs" role="group" aria-label="Langue">
+          <button type="button" class="chip" data-lang="fr">FR</button>
+          <button type="button" class="chip" data-lang="ar">عربي</button>
+          <button type="button" class="chip" data-lang="en">EN</button>
+        </div>
+        <button type="button" class="chip" id="themeBtn" aria-label="Thème clair / sombre">🌓</button>
+      </div>
+    </div>
   </header>
-  <nav class="menu">
-    <a class="lien" href="index.html">Accueil</a>
-    <a class="lien" href="calculateur.html">Calculateur</a>
-    <a class="lien" href="suivi.html">Suivi du lycée</a>
-    <a class="lien" href="sensibilisation.html">Sensibilisation</a>
-  </nav>
-  <main class="contenu">
-    <section class="bloc">
-      <h2 class="sous">Bienvenue / مرحبا / Welcome</h2>
-      <p>Notre lycée consomme de l'électricité, de l'eau et du papier, et produit des déchets. Ce site permet à <strong>tous les élèves et à tout le personnel</strong> de mesurer leur empreinte écologique (<span class="arabe">البصمة البيئية</span>) et de passer à l'action.</p>
-      <p><em>Our school uses electricity, water and paper, and produces waste. This website helps every student and staff member measure their ecological footprint and take action.</em></p>
-      <p class="note">Question du projet : quelle est l'empreinte écologique de notre lycée et comment la réduire durablement ?</p>
+
+  <main id="main">
+    <!-- ACCUEIL -->
+    <section id="accueil" class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <h1 data-i18n="hero.title"></h1>
+          <p class="lead" data-i18n="hero.text"></p>
+          <a class="btn" href="#calculateur" data-i18n="hero.cta"></a>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <svg viewBox="0 0 200 200" role="img">
+            <circle cx="100" cy="100" r="90" fill="rgba(255,255,255,.12)"/>
+            <circle cx="100" cy="100" r="62" fill="rgba(255,255,255,.18)"/>
+            <path d="M100 150 V92" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
+            <path d="M100 118 C70 118 58 96 60 74 C86 74 100 90 100 118 Z" fill="#bbf7d0"/>
+            <path d="M100 100 C130 100 144 78 142 56 C116 56 100 72 100 100 Z" fill="#86efac"/>
+          </svg>
+        </div>
+      </div>
     </section>
-    <section class="bloc">
-      <h2 class="sous">Les outils du projet</h2>
-      <article class="carte">
-        <h3 class="sous3">Calculateur</h3>
-        <p>Estimez votre empreinte personnelle : transport, énergie, eau, papier, déchets, alimentation.</p>
-        <a class="lien" href="calculateur.html">Calculer</a>
+
+    <section class="wrap cards3">
+      <article class="card">
+        <h2 data-i18n="goals.title"></h2>
+        <ul class="ticks">
+          <li data-i18n="goals.1"></li>
+          <li data-i18n="goals.2"></li>
+          <li data-i18n="goals.3"></li>
+        </ul>
       </article>
-      <article class="carte">
-        <h3 class="sous3">Suivi du lycée</h3>
-        <p>Saisissez les consommations mensuelles du lycée et suivez leur évolution.</p>
-        <a class="lien" href="suivi.html">Suivre</a>
+      <article class="card">
+        <h2 data-i18n="team.title"></h2>
+        <p data-i18n="team.text"></p>
       </article>
-      <article class="carte">
-        <h3 class="sous3">Sensibilisation</h3>
-        <p>Écogestes, quiz, glossaire trilingue et boîte à idées.</p>
-        <a class="lien" href="sensibilisation.html">Agir</a>
-      </article>
-      <div class="fin"></div>
     </section>
-    <section class="bloc">
-      <h2 class="sous">Nos objectifs</h2>
-      <ul>
-        <li>Réduire de 10 % la consommation de papier, d'électricité et d'eau sur l'année scolaire.</li>
-        <li>Mettre en place le tri sélectif dans tout l'établissement.</li>
-        <li>Sensibiliser élèves, personnel et familles aux écogestes.</li>
-      </ul>
+
+    <!-- CALCULATEUR -->
+    <section id="calculateur" class="wrap section">
+      <h2 class="section-title" data-i18n="calc.title"></h2>
+      <p class="muted" data-i18n="calc.intro"></p>
+      <div class="calc-grid">
+        <form class="card form" id="calcForm" onsubmit="return false">
+          <fieldset>
+            <legend data-i18n="calc.transport"></legend>
+            <label><span data-i18n="calc.mode"></span>
+              <select id="mode">
+                <option value="0.218" data-i18n="mode.car"></option>
+                <option value="0.113" data-i18n="mode.moto"></option>
+                <option value="0.146" data-i18n="mode.bus"></option>
+                <option value="0" data-i18n="mode.bike"></option>
+              </select>
+            </label>
+            <label><span data-i18n="calc.distance"></span> : <b id="distanceVal">8</b>
+              <input type="range" id="distance" min="0" max="60" step="0.5" value="8">
+            </label>
+            <label><span data-i18n="calc.days"></span> : <b id="daysVal">5</b>
+              <input type="range" id="days" min="1" max="6" step="1" value="5">
+            </label>
+          </fieldset>
+          <fieldset>
+            <legend data-i18n="calc.home"></legend>
+            <label><span data-i18n="calc.elec"></span>
+              <input type="number" id="elec" min="0" step="1" value="150" inputmode="decimal">
+            </label>
+            <label><span data-i18n="calc.water"></span>
+              <input type="number" id="water" min="0" step="0.5" value="12" inputmode="decimal">
+            </label>
+            <label><span data-i18n="calc.paper"></span>
+              <input type="number" id="paper" min="0" step="1" value="20" inputmode="decimal">
+            </label>
+          </fieldset>
+          <fieldset>
+            <legend data-i18n="calc.wastegroup"></legend>
+            <label><span data-i18n="calc.waste"></span>
+              <input type="number" id="waste" min="0" step="0.5" value="5" inputmode="decimal">
+            </label>
+            <label class="check"><input type="checkbox" id="sort" checked> <span data-i18n="calc.sort"></span></label>
+            <label><span data-i18n="calc.food"></span>
+              <select id="food">
+                <option value="1500" data-i18n="food.high"></option>
+                <option value="1000" selected data-i18n="food.mid"></option>
+                <option value="600" data-i18n="food.low"></option>
+              </select>
+            </label>
+          </fieldset>
+        </form>
+
+        <div class="card result" id="result" aria-live="polite">
+          <div class="donut-box">
+            <svg id="donut" viewBox="0 0 120 120" role="img" aria-label="Répartition de l'empreinte"></svg>
+            <div class="donut-center">
+              <strong id="totalVal">0</strong>
+              <span data-i18n="calc.unit"></span>
+            </div>
+          </div>
+          <p id="levelBadge" class="badge"></p>
+          <ul id="legend" class="legend"></ul>
+          <p id="treesText" class="muted"></p>
+          <p id="topText"></p>
+          <p class="muted small" data-i18n="calc.ref"></p>
+          <div class="row">
+            <button type="button" class="btn" id="saveBtn" data-i18n="calc.save"></button>
+            <button type="button" class="btn ghost" id="printBtn" data-i18n="calc.print"></button>
+          </div>
+          <p id="savedMsg" class="ok small" role="status"></p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 data-i18n="calc.history"></h3>
+        <ul id="history" class="history"></ul>
+        <button type="button" class="btn ghost small-btn" id="clearHistory" data-i18n="calc.clear"></button>
+      </div>
+      <details class="card method">
+        <summary data-i18n="calc.method"></summary>
+        <p class="muted" data-i18n="calc.methodtext"></p>
+      </details>
+    </section>
+
+    <!-- SUIVI -->
+    <section id="suivi" class="wrap section">
+      <h2 class="section-title" data-i18n="track.title"></h2>
+      <p class="muted" data-i18n="track.intro"></p>
+      <div class="track-grid">
+        <div class="card table-wrap">
+          <table id="trackTable">
+            <thead>
+              <tr>
+                <th data-i18n="th.month"></th>
+                <th data-i18n="th.elec"></th>
+                <th data-i18n="th.water"></th>
+                <th data-i18n="th.paper"></th>
+                <th data-i18n="th.co2"></th>
+              </tr>
+            </thead>
+            <tbody id="trackBody"></tbody>
+          </table>
+          <div class="row">
+            <button type="button" class="btn ghost small-btn" id="exportBtn" data-i18n="track.export"></button>
+            <label class="btn ghost small-btn filebtn"><span data-i18n="track.import"></span>
+              <input type="file" id="importFile" accept=".csv,text/csv" hidden>
+            </label>
+            <button type="button" class="btn ghost small-btn danger" id="resetTrack" data-i18n="track.reset"></button>
+          </div>
+        </div>
+        <div class="card">
+          <h3 data-i18n="track.chart"></h3>
+          <svg id="trackChart" viewBox="0 0 420 240" class="chart" role="img"></svg>
+          <p id="trackSummary" class="muted"></p>
+          <p id="trackVerdict"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEFIS -->
+    <section id="defis" class="wrap section">
+      <h2 class="section-title" data-i18n="chall.title"></h2>
+      <p class="muted" data-i18n="chall.intro"></p>
+      <div class="card">
+        <div class="progress-head">
+          <strong id="badgeName"></strong>
+          <span id="pointsText" class="muted"></span>
+        </div>
+        <div class="progress" aria-hidden="true"><div id="progressBar"></div></div>
+        <ul id="challList" class="chall"></ul>
+        <button type="button" class="btn ghost small-btn" id="challReset" data-i18n="chall.reset"></button>
+      </div>
+    </section>
+
+    <!-- QUIZ -->
+    <section id="quiz" class="wrap section">
+      <h2 class="section-title" data-i18n="quiz.title"></h2>
+      <div class="card quiz" id="quizBox"></div>
+    </section>
+
+    <!-- GLOSSAIRE -->
+    <section id="glossaire" class="wrap section">
+      <h2 class="section-title" data-i18n="gloss.title"></h2>
+      <div class="card table-wrap">
+        <input type="search" id="glossSearch" data-i18n-ph="gloss.search" placeholder="Rechercher…" class="search">
+        <table>
+          <thead>
+            <tr><th data-i18n="gloss.fr"></th><th data-i18n="gloss.ar"></th><th data-i18n="gloss.en"></th></tr>
+          </thead>
+          <tbody id="glossBody"></tbody>
+        </table>
+      </div>
     </section>
   </main>
-  <footer class="pied">
-    <p>Projet البصمة البيئية – Lycée Oued Ellil – <span id="annee"></span></p>
-    <p>Responsable du projet : Mme Sonia Aouichi (professeure d'anglais)</p>
+
+  <footer class="footer">
+    <p data-i18n="footer.text"></p>
+    <p class="small">© <span id="year"></span></p>
   </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
